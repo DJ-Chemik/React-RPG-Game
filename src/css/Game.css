@@ -1,7 +1,18 @@
 .Game {
   text-align: center;
+  border: solid;
+  display: flex;
 }
 
+.Game .action {
+  background-color: darkseagreen;
+  width: 70%;
+}
+
+.Game > .gui {
+  background-color: dimgray;
+  width: 30%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
