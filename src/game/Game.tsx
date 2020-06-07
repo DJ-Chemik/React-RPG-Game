@@ -14,7 +14,7 @@ function Game() {
       </div>
       <div className="gui">
         <EquipmentPanel/>
-        <AbilitiesPanel/>
+        <AbilitiesPanel strength={0} dexterity={0} luck={0}/>
       </div>
     </div>
   );
