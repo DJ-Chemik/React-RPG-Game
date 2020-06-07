@@ -6,11 +6,28 @@ import EquipmentPanel from './EquipmentPanel';
 import AbilitiesPanel from './AbilitiesPanel';
 import plot from './../data/plot.json';
 
+export interface IAnswer{
+  id: number,
+  value: string
+}
+
+export interface IDecision{
+
+}
+
+export interface INewSkill{
+  name: string,
+  value: number,
+}
+
 interface IPlotFragment{
   id: number,
   content: string,
-  responds: string[],
-  nextSteps: number[],
+  responds: IAnswer[],
+  decision?: IDecision,
+  newSword?: string,
+  newItems?: string[],
+  newSkills?: []
 }
 
 function Game() {
@@ -22,8 +39,9 @@ function Game() {
 
   useEffect( () => {
     getPlotFragment(0);
-  })
+  }, [])
 
+  
   const getPlotFragment = (id: number) => {   
     let plotPiece = plot.map( (element) => {
       if(id===element.id){
@@ -40,10 +58,11 @@ function Game() {
     return(plotPiece[0])
   }
 
-  const handleAnswer = () => {
-    
+  const handleAnswer = (id: number) => {
+    getPlotFragment(id);
   }
 
+  
 
   return (
     <div className="Game">
@@ -53,6 +72,7 @@ function Game() {
         />
         <RespondPanel
           responds={plotFragment?.responds}
+          onChooseAnswer={handleAnswer}
         />
       </div>
       <div className="gui">

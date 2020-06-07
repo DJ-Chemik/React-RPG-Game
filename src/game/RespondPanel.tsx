@@ -1,14 +1,17 @@
 import React from "react";
 import './../css/RespondPanel.css';
+import { IAnswer } from "./Game";
 
 interface IResponds{
-    responds?: string[],
+    responds?: IAnswer[],
+    onChooseAnswer: (id: number)=>void,
 }
 
 const RespondPanel = (props: IResponds) => {
     
-    const handleClick = () => {
-        
+    const handleClick = (id: number) => {
+        props.onChooseAnswer(id);
+        return(undefined);
     }
 
     const showResponds = () => {
@@ -16,9 +19,9 @@ const RespondPanel = (props: IResponds) => {
             return(
                 props.responds.map( (answer) => {
                     return(
-                        <li key={Math.random()}>
-                            <input type="button" onClick={handleClick}></input>
-                            {answer}
+                        <li key={answer.id}>
+                            <input type="button" onClick={ () => {handleClick(answer.id)}}></input>
+                            {answer.value}
                         </li>
                     );
                 })
