@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './../css/Game.css';
 import ContentPanel from './ContentPanel';
 import RespondPanel from './RespondPanel';
@@ -6,9 +6,8 @@ import EquipmentPanel from './EquipmentPanel';
 import AbilitiesPanel from './AbilitiesPanel';
 
 function Game() {
-
-  const sword = "Miecz Posejduma";
-  const items = ["eliksir zręczności", "kurtka skórzana"];
+  const [sword, setSword] = useState("Gołe pięści");
+  const [items, setItems] = useState(["Eliksir zręczności"]);
 
   return (
     <div className="Game">

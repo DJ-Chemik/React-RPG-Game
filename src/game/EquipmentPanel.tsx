@@ -4,11 +4,13 @@ import './../css/EquipmentPanel.css';
 interface IEquipmentStructure {
     sword?: string,
     items?: string[],
+    dukats?: number,
 }
 
 const EquipmentPanel = (props: IEquipmentStructure) => {
     const [sword, setSword] = useState<string>("---");
     const [items, setItems] = useState<string[]>(["---"]);
+    const [dukats, setDukats] = useState<number>(0);
     
     useEffect( () => {
         if (props.sword) {
@@ -16,6 +18,9 @@ const EquipmentPanel = (props: IEquipmentStructure) => {
         }
         if (props.items) {
             setItems(props.items);
+        }
+        if (props.dukats) {
+            setDukats(props.dukats);
         }
     }, [props]);
 
@@ -33,7 +38,8 @@ const EquipmentPanel = (props: IEquipmentStructure) => {
 
     return(
         <div className="EquipmentPanel">
-            <b>Miecz:</b> {sword} <br/>
+            <b>Broń:</b> {sword} <br/>
+            <b>Dukaty:</b> {dukats}
             <ul>
                 <b>Przedmioty:</b>
                 {listOfItems()}

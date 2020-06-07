@@ -11,9 +11,9 @@ const AbilitiesPanel = (props : IStatusSkills) => {
 
     return(
         <div className="AbilitiesPanel">
-            Siła: {props.strength}/10<br/>
-            Zręczność: {props.dexterity}/10<br/>
-            Szczęście: {props.luck}/10<br/>
+            <b>Siła:</b> {props.strength}/10<br/>
+            <b>Zręczność:</b> {props.dexterity}/10<br/>
+            <b>Szczęście:</b> {props.luck}/10<br/>
         </div>
     );
 }
