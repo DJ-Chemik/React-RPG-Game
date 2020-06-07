@@ -23,6 +23,8 @@ function Game() {
   const [sword, setSword] = useState("Gołe pięści");
   // eslint-disable-next-line 
   const [items, setItems] = useState(["Eliksir zręczności"]);
+  // eslint-disable-next-line 
+  const [dukats, setDukats] = useState(1000);
   // eslint-disable-next-line
   const [abilities, setAbilities] = useState<IStatusSkills>({
     strength:0,
@@ -112,6 +114,15 @@ function Game() {
     })
   }
 
+  const randomWithProbability = (probability: number) => {
+    const randomNumber = Math.random();
+    const playerChance = probability/100; //Convert percentage to number in range <0,100>
+    if(randomNumber<=playerChance){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   const handleStep0 = (decision: number) => {
     if(iterator>0){
@@ -132,16 +143,57 @@ function Game() {
     
   }
 
+  //next 4 or (5 or 6)
+  const handleStep3 = (decision: number, nextStep: number) => {
+    if(decision===1){
+      setActualStep(nextStep);
+      getPlotFragment(nextStep);
+    }else{
+      let result: boolean;
+      if(abilities.luck>2){
+        result = randomWithProbability(70);
+      }else{
+        result = randomWithProbability(50);
+      }
+
+      if(result){
+        setActualStep(5);
+        getPlotFragment(5);
+      }else{
+        setActualStep(6);
+        getPlotFragment(6);
+      }
+    }
+  }
+
+  const handleStep5 = (decision: number, nextStep: number) => {
+    changeStrength(1);
+    setActualStep(nextStep);
+    getPlotFragment(nextStep);
+  }
+
+  const handleStep6 = (decision: number, nextStep: number) => {
+    const minus = Math.round( Math.random()*100 );
+    setDukats(dukats-minus);
+    setActualStep(nextStep);
+    getPlotFragment(nextStep);
+  }
+
   const handleAnswer = (decision: number, nextStep: number) => {
     if(actualStep===0){
       handleStep0(decision);
+    }else if(actualStep===3){
+      handleStep3(decision, nextStep);
+    }else if(actualStep===5){
+      handleStep5(decision, nextStep);
+    }else if(actualStep===6){
+      handleStep6(decision, nextStep);
     }else{
       setActualStep(nextStep);
       getPlotFragment(nextStep);
     }
   }
 
-  
 
   return (
     <div className="Game">
@@ -158,6 +210,7 @@ function Game() {
         <EquipmentPanel 
           sword={sword} 
           items={items}
+          dukats={dukats}
         />
         <AbilitiesPanel strength={abilities?.strength} dexterity={abilities?.dexterity} luck={abilities?.luck}/>
       </div>

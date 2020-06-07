@@ -19,8 +19,61 @@
         "id": 2,
         "content": "Pamiętasz że walczyłeś z mantikorą. Jak to się jednak stało, że udało ci się przeżyć? Czyżby potwór uciekł po tym jak zemdlałeś? Mało prawdopodobne, ale nic innego nie przychodzi Ci na razie na myśl. Nie masz jednak czasu na rozmyślanie nad tym. Pora zdecydować jak wykaraskać sie z tej opresji.",
         "responds": [
-            {"id":1, "nextStep":2, "value":"Poszukaj ziół leczniczych aby opatrzyć ranę i nie wykrwawić się zanim znajdziesz pomoc"},
-            {"id":2, "nextStep":2, "value":"Od razu udaj się w stronę najbliższej wioski, która mijałeś wcześniej. Może tam uda ci się zdobyć pomoc jeszcze przed zmrokiem"}
+            {"id":1, "nextStep":3, "value":"Poszukaj ziół leczniczych aby opatrzyć ranę i nie wykrwawić się zanim znajdziesz pomoc"},
+            {"id":2, "nextStep":8, "value":"Od razu udaj się w stronę najbliższej wioski, którą mijałeś wcześniej. Może tam uda ci się zdobyć pomoc jeszcze przed zmrokiem"}
+        ]
+    },
+    {
+        "id": 3,
+        "content": "Udało ci się znaleźć zioła lecznicze. Straciłeś trochę czasu i dotrzesz do wioski pewnie później. Chyba że zioła pomogą i będziesz mógł iść dzięki temu szybciej nadrabiając czas. Nie wiesz tylko czy chcesz ryzykować robieniem opatrunku z tych ziół, bo nie jesteś pewien ich działania. Wprawdzie strasi wiedźmini uczyli cię i tego jednak zielarstwo nie jest twoją najmocniejszą stroną.",
+        "responds": [
+            {"id":1, "nextStep":4, "value":"Nie ryzykuję. Może te zioła nie są tym za co je uważam. Lepiej od razu udam sie do wioski"},
+            {"id":2, "nextStep":-1, "value":"Rozgniatasz zioła na miekką papkę. Przyglądasz im się jeszcze raz. Powinno zadziałać. Przykładasz je do rany dokładnie osłaniając najgłębsze rany"}
+        ]
+    },
+    {
+        "id": 4,
+        "content": "Niestety czas stracony na poszukiwaniach ziół jest nie do odzyskania. Wprawdzie mrok jescze daleko, ale wiesz, że gdy dotrzesz do wioski będziesz miał mniej czasu na znalezienie pomocy",
+        "responds": [
+            {"id":1, "nextStep":9, "value":"Dalej"}
+        ]
+    },
+    {
+        "id": 5,
+        "content": "Cieszysz się, że opatrzyłeś ranę. Twoja wiedza medyczna i szczęście i ci dopisały. Wprawdzie straciłeś trochę czasu na szukanie ziół, ale w rezultacie czujesz się lepiej i bez problemu nadrobisz ten czas bo możesz isć znacznie szybciej. Dodatkowo odzyskałeś cześć sił gdy nie odczuwasz już takiego bólu i otrzymuejsz dodatkowy punkt do siły.",
+        "responds": [
+            {"id":1, "nextStep":9, "value":"Idź dalej i odbierz punk siły"}
+        ]
+    },
+    {
+        "id": 6,
+        "content": "Niestety chyba coś pomyliłeś. Po przyłożeniu ziół do rany czujesz się otępiały i senny. Nie dajesz rady tego opanować. Już wiesz że użycie ziół było złą decyzją",
+        "responds": [
+            {"id":1, "nextStep":7, "value":"Zasypiasz nie mając sił"}
+        ]
+    },
+    {
+        "id": 7,
+        "content": "Budzisz się. Uświadamiasz sobie, że brakuje ci części doukatów. Może ktoś ci je ukradł. A może miałeś halucynacje i lunatykowałeś? Nie pamiętasz, ale wiesz że straciłeś czas który mogłeś wykorzystać na udanie się do wioski. Teraz wiesz że dotrzesz tam później niż byś mógł to zrobić pierwotnie.",
+        "responds": [
+            {"id":1, "nextStep":9, "value":"Udaj się do wioski"}
+        ]
+    },
+    {
+        "id": 8,
+        "content": "Wybrałeś drogę bezpośrednio do wioski. Nie tracisz czasu i czym prędzej chcesz znaleźć osobę która ci pomoże. ",
+        "responds": [
+            {"id":1, "nextStep":9, "value":"Dalej"}
+            
+        ]
+    },
+    {
+        "id": 9,
+        "content": "LAS PUNKT 3",
+        "responds": [
+            {"id":1, "nextStep":9, "value":"Dalej"}
+            
         ]
     }
+    
 ]
