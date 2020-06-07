@@ -6,6 +6,10 @@ import EquipmentPanel from './EquipmentPanel';
 import AbilitiesPanel from './AbilitiesPanel';
 
 function Game() {
+
+  const sword = "Miecz Posejduma";
+  const items = ["eliksir zręczności", "kurtka skórzana"];
+
   return (
     <div className="Game">
       <div className="action">
@@ -13,7 +17,10 @@ function Game() {
         <RespondPanel/>
       </div>
       <div className="gui">
-        <EquipmentPanel/>
+        <EquipmentPanel 
+          sword={sword} 
+          items={items}
+        />
         <AbilitiesPanel strength={0} dexterity={0} luck={0}/>
       </div>
     </div>
