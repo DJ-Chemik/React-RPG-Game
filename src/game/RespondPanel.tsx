@@ -16,7 +16,7 @@ const RespondPanel = (props: IResponds) => {
             return(
                 props.responds.map( (answer) => {
                     return(
-                        <li>
+                        <li key={Math.random()}>
                             <input type="button" onClick={handleClick}></input>
                             {answer}
                         </li>

@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "content": "Witaj w świecie Wiedźmina! Kliknij przycisk START by rozpocząć przygodę",
+        "responds": [
+            "START"
+        ],
+        "nextSteps": [1]
+    },
+    {
+        "id": 1,
+        "content": "Nazywasz się Keldar. Jesteś młodym wiedźminem z cechu gryfa. Właśnie budzisz się zakrwawiony w środku lasu. Twoja lewa noga jest bardzo poraniona przez kły.",
+        "responds": [
+            "Dalej"
+        ],
+        "nextSteps": [2]
+    }
+]
