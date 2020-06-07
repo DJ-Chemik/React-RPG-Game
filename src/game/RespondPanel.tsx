@@ -4,13 +4,13 @@ import { IAnswer } from "./Game";
 
 interface IResponds{
     responds?: IAnswer[],
-    onChooseAnswer: (id: number)=>void,
+    onChooseAnswer: (id: number, nextStep: number)=>void,
 }
 
 const RespondPanel = (props: IResponds) => {
     
-    const handleClick = (id: number) => {
-        props.onChooseAnswer(id);
+    const handleClick = (id: number, nextStep:number) => {
+        props.onChooseAnswer(id, nextStep);
         return(undefined);
     }
 
@@ -20,7 +20,7 @@ const RespondPanel = (props: IResponds) => {
                 props.responds.map( (answer) => {
                     return(
                         <li key={answer.id}>
-                            <input type="button" onClick={ () => {handleClick(answer.id)}}></input>
+                            <input type="button" onClick={ () => {handleClick(answer.id, answer.nextStep)}}></input>
                             {answer.value}
                         </li>
                     );

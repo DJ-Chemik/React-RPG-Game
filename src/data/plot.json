@@ -1,16 +1,26 @@
 [
     {
         "id": 0,
-        "content": "Witaj w świecie Wiedźmina! Kliknij przycisk START by rozpocząć przygodę",
+        "content": "Witaj w świecie Wiedźmina! Aby rozpocząć przygodę rozdysponuj swoje punkty zdolności. Masz do wykorzystania 4 punkty na 3 cechy statusu",
         "responds": [
-            {"id":1, "value":"START"}
+            {"id":1, "nextStep":0, "value":"Siła"},
+            {"id":2, "nextStep":0, "value":"Zręczność"},
+            {"id":3, "nextStep":0, "value":"Szczęście"}
         ]
     },
     {
         "id": 1,
         "content": "Nazywasz się Keldar. Jesteś młodym wiedźminem z cechu gryfa. Właśnie budzisz się zakrwawiony w środku lasu. Twoja lewa noga jest bardzo poraniona przez kły jakiegoś monstra.",
         "responds": [
-            {"id":0, "value":"Dalej"}
+            {"id":1, "nextStep":2, "value":"Dalej"}
+        ]
+    },
+    {
+        "id": 2,
+        "content": "Pamiętasz że walczyłeś z mantikorą. Jak to się jednak stało, że udało ci się przeżyć? Czyżby potwór uciekł po tym jak zemdlałeś? Mało prawdopodobne, ale nic innego nie przychodzi Ci na razie na myśl. Nie masz jednak czasu na rozmyślanie nad tym. Pora zdecydować jak wykaraskać sie z tej opresji.",
+        "responds": [
+            {"id":1, "nextStep":2, "value":"Poszukaj ziół leczniczych aby opatrzyć ranę i nie wykrwawić się zanim znajdziesz pomoc"},
+            {"id":2, "nextStep":2, "value":"Od razu udaj się w stronę najbliższej wioski, która mijałeś wcześniej. Może tam uda ci się zdobyć pomoc jeszcze przed zmrokiem"}
         ]
     }
 ]

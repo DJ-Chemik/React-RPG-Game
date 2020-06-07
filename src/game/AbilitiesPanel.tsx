@@ -1,7 +1,7 @@
 import React from "react";
 import './../css/AbilitiesPanel.css';
 
-interface IStatusSkills{
+export interface IStatusSkills{
     strength: number,
     dexterity: number,
     luck: number,
