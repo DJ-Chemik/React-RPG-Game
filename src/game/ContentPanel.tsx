@@ -1,12 +1,25 @@
 import React from "react";
 import './../css/ContentPanel.css';
 
-const ContentPanel = () => {
-    return(
-        <div className="ContentPanel">
-            ContentPanel
-        </div>
-    );
+interface IContent{
+    content?: string,
+}
+
+const ContentPanel = (props: IContent) => {
+    if(props.content){
+        return(
+            <div className="ContentPanel">
+                {props.content}
+            </div>
+        );
+    }else{
+        return(
+            <div className="ContentPanel">
+                <br/><br/><br/><br/><br/>
+            </div>
+        );
+    }
+    
 }
 
 export default ContentPanel;

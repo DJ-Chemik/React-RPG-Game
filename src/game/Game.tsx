@@ -12,8 +12,12 @@ function Game() {
   return (
     <div className="Game">
       <div className="action">
-        <ContentPanel/>
-        <RespondPanel/>
+        <ContentPanel
+          content={"Witaj przybyszu!"}
+        />
+        <RespondPanel
+          responds={["a","b","c"]}
+        />
       </div>
       <div className="gui">
         <EquipmentPanel 
